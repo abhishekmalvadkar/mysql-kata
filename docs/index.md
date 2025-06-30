@@ -1,6 +1,17 @@
-# 🧠 MySQL Kata
+# 🧠 SQL Kata Practice
 
-Welcome to my collection of SQL practice problems.  
-Each kata helps strengthen your SQL skills with practical, real-world-style questions.
+Welcome to my personal SQL kata collection.
 
-Navigate through the sidebar to explore individual katas.
+Each kata includes:
+- ✅ Problem description
+- 🧪 Test data
+- 🧾 Final solution
+- 💡 Lessons learned
+
+---
+
+## 🔗 Kata List
+
+### 📄 [Customer Orders Overview](katas/customer-orders-overview/problem.md)
+- Joins + Sorting
+- Difficulty: 🟢 Beginner
