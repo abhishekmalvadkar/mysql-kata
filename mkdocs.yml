@@ -4,7 +4,11 @@ repo_url: https://github.com/abhishekmalvadkar/mysql-kata
 nav:
   - Home: index.md
   - Katas:
-      - Customer Orders Overview: katas/customer-orders-overview/problem.md
+      - Customer Orders Overview:
+          - Problem: katas/customer-orders-overview/problem.md
+          - Test Data: katas/customer-orders-overview/test-data.md
+          - Solution: katas/customer-orders-overview/solution.md
+          - Lesson Learned: katas/customer-orders-overview/lesson-learned.md
 
 theme:
   name: material
@@ -19,6 +23,9 @@ theme:
     - scheme: default
       primary: blue
       accent: light blue
+
+plugins:
+  - search
 
 markdown_extensions:
   - toc:
