@@ -3,6 +3,7 @@
 Welcome to my personal SQL kata collection.
 
 Each kata includes:
+
 - ✅ Problem description
 - 🧪 Test data
 - 🧾 Final solution
