@@ -16,3 +16,5 @@ Each kata includes:
 ### 📄 [Customer Orders Overview](katas/customer-orders-overview/problem.md)
 - Joins + Sorting
 - Difficulty: 🟢 Beginner
+
+### [Active User Kata](katas/active_user.md)
