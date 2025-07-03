@@ -9,8 +9,9 @@ nav:
           - Test Data: katas/customer-orders-overview/test-data.md
           - Solution: katas/customer-orders-overview/solution.md
           - Lesson Learned: katas/customer-orders-overview/lesson-learned.md
+  - Misc:
       - Active User:
-          - Problem with solution: active-user.md
+         - Problem with solution: active-user.md
       
 
 theme:
