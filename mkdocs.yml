@@ -10,7 +10,7 @@ nav:
           - Solution: katas/customer-orders-overview/solution.md
           - Lesson Learned: katas/customer-orders-overview/lesson-learned.md
       - Active User:
-          - Problem with solution: katas/active-user.md
+          - Problem with solution: active-user.md
       
 
 theme:
