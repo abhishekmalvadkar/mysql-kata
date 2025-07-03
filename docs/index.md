@@ -17,4 +17,4 @@ Each kata includes:
 - Joins + Sorting
 - Difficulty: 🟢 Beginner
 
-### [Active User Kata](katas/active_user.md)
+### [Active User Kata](active_user.md)
