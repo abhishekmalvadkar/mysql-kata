@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+    <url>
+         <loc>https://abhishekmalvadkar.github.io/mysql-kata/</loc>
+         <lastmod>2025-07-03</lastmod>
+    </url>
+    <url>
+         <loc>https://abhishekmalvadkar.github.io/mysql-kata/active-user/</loc>
+         <lastmod>2025-07-03</lastmod>
+    </url>
+    <url>
+         <loc>https://abhishekmalvadkar.github.io/mysql-kata/katas/customer-orders-overview/lesson-learned/</loc>
+         <lastmod>2025-07-03</lastmod>
+    </url>
+    <url>
+         <loc>https://abhishekmalvadkar.github.io/mysql-kata/katas/customer-orders-overview/problem/</loc>
+         <lastmod>2025-07-03</lastmod>
+    </url>
+    <url>
+         <loc>https://abhishekmalvadkar.github.io/mysql-kata/katas/customer-orders-overview/solution/</loc>
+         <lastmod>2025-07-03</lastmod>
+    </url>
+    <url>
+         <loc>https://abhishekmalvadkar.github.io/mysql-kata/katas/customer-orders-overview/test-data/</loc>
+         <lastmod>2025-07-03</lastmod>
+    </url>
+</urlset>
