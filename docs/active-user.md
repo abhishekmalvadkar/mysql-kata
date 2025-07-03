@@ -185,6 +185,79 @@ Then run the full query with CTEs and observe the result.
 
 ---
 
+## 🔎 Deep Dive: How `DATE_SUB(record_date, INTERVAL row_number DAY)` Detects Consecutive Days
+
+This is the core trick of the entire query. Here's how it works step by step.
+
+---
+
+### 🧠 Goal Recap
+
+We want to group together rows that represent **consecutive days** of user activity.
+
+### 🔢 Key Idea
+
+For each row, we assign a `row_number` and subtract that many days from `record_date`.
+If the user was active on **consecutive days**, the result (`record_date - row_number`) will be **constant**.
+
+---
+
+### 🔧 Example Walkthrough
+
+| user\_id | record\_date | row\_number | record\_date - row\_number |
+| -------- | ------------ | ----------- | -------------------------- |
+| A        | 2024-07-01   | 1           | 2024-06-30                 |
+| A        | 2024-07-02   | 2           | 2024-06-30                 |
+| A        | 2024-07-03   | 3           | 2024-06-30                 |
+| A        | 2024-07-05   | 4           | 2024-07-01                 |
+
+🧠 All three consecutive days (July 1–3) subtract their row number and give `June 30`. This means they're part of the same **consecutive streak group**.
+
+But July 5 breaks the pattern and forms its own group.
+
+---
+
+### 🎯 Why It Works
+
+* If dates are consecutive, subtracting increasing row numbers keeps the difference **constant**.
+* This gives a **group identifier** for each consecutive streak.
+* Later, we `GROUP BY` this identifier and count how many dates are in each group.
+
+---
+
+### 🧩 Visualizing It
+
+```
+record_date:        2024-07-01   2024-07-02   2024-07-03   2024-07-05
+row_number:                1            2            3            4
+DATE_SUB result:     2024-06-30   2024-06-30   2024-06-30   2024-07-01
+Group Identifier:         A            A            A            B
+```
+
+Then:
+
+```sql
+GROUP BY user_id, group_identifier
+HAVING COUNT(*) >= 3
+```
+
+Gives you users active for **3 or more consecutive days**.
+
+---
+
+### ✅ Summary of the Trick
+
+| Expression                               | Purpose                                  |
+| ---------------------------------------- | ---------------------------------------- |
+| `ROW_NUMBER() OVER (...)`                | Indexes the dates in order per user      |
+| `DATE_SUB(record_date, INTERVAL rn DAY)` | Creates a consistent value for sequences |
+| `GROUP BY user_id, diff`                 | Groups consecutive day sequences         |
+| `HAVING COUNT(*) >= 3`                   | Filters for users with streaks           |
+
+---
+
+This clever trick avoids complex joins or recursive CTEs and gives a clean, fast way to detect date streaks using window functions.
+
 ## 💬 Final Thoughts
 
 Understanding consecutive date problems is crucial in activity tracking, retention analysis, and time-series data queries. With window functions and CTEs, even complex problems become clean, readable, and scalable.
